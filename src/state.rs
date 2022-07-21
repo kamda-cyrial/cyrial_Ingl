@@ -1,9 +1,17 @@
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::{borsh::try_from_slice_unchecked, native_token::LAMPORTS_PER_SOL, program_error::ProgramError};
+use solana_program::{borsh::try_from_slice_unchecked, native_token::LAMPORTS_PER_SOL, program_error::ProgramError, pubkey::Pubkey};
 
 use crate::error::InglError;
+pub mod constants{
+    pub const INGL_NFT_COLLECTION_KEY: &str = "ingl_nft_collection_newer";
+    pub const INGL_MINT_AUTHORITY_KEY: &str = "mint_authority";
+    pub const INGL_MINTING_POOL_KEY: &str = "minting_pool";
+    pub const COLLECTION_HOLDER_KEY: &str = "collection_holder";
+    pub const GLOBAL_GEM_KEY: &str = "global_gem_account";
+    pub const GEM_ACCOUNT_CONST: &str = "gem_account";
+}
 
-#[derive(BorshSerialize, BorshDeserialize)]
+#[derive(BorshSerialize,Copy, Clone, BorshDeserialize)]
 pub enum Class {
     Ruby,
     Diamond,
@@ -15,13 +23,13 @@ pub enum Class {
 
 impl Class {
     pub fn get_class_lamports(self)->u64{
-        match self {
-            Self::Ruby => {500 * LAMPORTS_PER_SOL}
-            Self::Diamond => {100 * LAMPORTS_PER_SOL}
-            Self::Sapphire => {50 * LAMPORTS_PER_SOL}
-            Self::Emerald => {10 * LAMPORTS_PER_SOL}
-            Self::Serendibite => {5 * LAMPORTS_PER_SOL}
-            Self::Benitoite => {1 * LAMPORTS_PER_SOL}
+        LAMPORTS_PER_SOL * match self {
+            Self::Ruby => {500}
+            Self::Diamond => {100}
+            Self::Sapphire => {50}
+            Self::Emerald => {10}
+            Self::Serendibite => {5}
+            Self::Benitoite => {1}
         }
     }
 }
@@ -37,13 +45,26 @@ pub enum Rarity{
 }
 
 #[derive(BorshDeserialize, BorshSerialize)]
-pub struct GemAccountV0_0_1{
-    struct_id: GemAccountVersions,
-    date_created: i64,
-    redeemable_data: i64,
-    numeration: u32,
-    rarity: Rarity,
+pub struct GlobalGems{
+    pub counter: u32,
+    pub total_raised: u64,
+}
 
+#[derive(BorshDeserialize, BorshSerialize)]
+pub enum FundsLocation{
+    MintingPool,
+    PDPool,
+    VoteAccount{id:Pubkey}
+}
+
+#[derive(BorshDeserialize, BorshSerialize)]
+pub struct GemAccountV0_0_1{
+    pub struct_id: GemAccountVersions,
+    pub date_created: u32,
+    pub redeemable_data: u32,
+    pub numeration: u32,
+    pub rarity: Option<Rarity>,
+    pub funds_location: FundsLocation,
 }
 
 #[derive(BorshDeserialize, BorshSerialize)]

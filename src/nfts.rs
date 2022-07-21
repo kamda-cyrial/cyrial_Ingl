@@ -10,10 +10,10 @@ pub fn get_uri<'life>(class: Class, rarity: Option<Rarity>) -> &'life str{
                         Rarity::Uncommon => {"RubyUncommon"}
                         Rarity::Rare => {"RubyRare"}
                         Rarity::Exalted => {"RubyExalted"}
-                        Rarity::Mythic => {"RubyMythic"}
+                        Rarity::Mythic => {"https://arweave.net/V-GN01-V0OznWUpKEIf0XAMEA_-ndFOfYKNJoPdNpsE"}
                     }
                 }
-                None => {"DefaultRuby"}
+                None => {"https://arweave.net/269uSJ8LWFFeWVA44oeJuvAJhD6Otu6_9Ruc323zKi0"}
             }
         }
         Class::Diamond => {
@@ -24,10 +24,10 @@ pub fn get_uri<'life>(class: Class, rarity: Option<Rarity>) -> &'life str{
                         Rarity::Uncommon => {"DiamondUncommon"}
                         Rarity::Rare => {"DiamondRare"}
                         Rarity::Exalted => {"DiamondExalted"}
-                        Rarity::Mythic => {"DiamondMythic"}
+                        Rarity::Mythic => {"https://arweave.net/K8A0TAPGY0QZCuyPDXPemGNNtKe97r07JCQ5pS4J6nA"}
                     }
                 }
-                None => {"DefaultDiamond"}
+                None => {"https://arweave.net/mxqPr11o3xJrV0lSxPpjSjry8YBf2nRGFsPMkiFIL4g"}
             }
         }
         Class::Sapphire => {
@@ -38,10 +38,10 @@ pub fn get_uri<'life>(class: Class, rarity: Option<Rarity>) -> &'life str{
                         Rarity::Uncommon => {"SapphireUncommon"}
                         Rarity::Rare => {"SapphireRare"}
                         Rarity::Exalted => {"SapphireExalted"}
-                        Rarity::Mythic => {"SapphireMythic"}
+                        Rarity::Mythic => {"https://arweave.net/00h-GOmxAzRuo3FAyddmd0VVazj6fNId3Xkhg5S3Fww"}
                     }
                 }
-                None => {"DefaultSapphire"}
+                None => {"https://arweave.net/4ddiMaqN-1LxQuGfcJE3qUbKh-IaULpTK9BYYlbY17s"}
             }
         }
         Class::Emerald => {
@@ -52,10 +52,10 @@ pub fn get_uri<'life>(class: Class, rarity: Option<Rarity>) -> &'life str{
                         Rarity::Uncommon => {"EmeraldUncommon"}
                         Rarity::Rare => {"EmeraldRare"}
                         Rarity::Exalted => {"EmeraldExalted"}
-                        Rarity::Mythic => {"EmeraldMythic"}
+                        Rarity::Mythic => {"https://arweave.net/RXG9EgRsMVrpGpAd5PgjzCfP0hBdybMepf07wQPoXEU"}
                     }
                 }
-                None => {"DefaultEmerald"}
+                None => {"https://arweave.net/DdZ9tKy1ZBfTKHFXsPzhkcBMYTSsv5g7bmgZ_d6mG1Y"}
             }
         }
         Class::Serendibite => {
@@ -66,10 +66,10 @@ pub fn get_uri<'life>(class: Class, rarity: Option<Rarity>) -> &'life str{
                         Rarity::Uncommon => {"SerendibiteUncommon"}
                         Rarity::Rare => {"SerendibiteRare"}
                         Rarity::Exalted => {"SerendibiteExalted"}
-                        Rarity::Mythic => {"SerendibiteMythic"}
+                        Rarity::Mythic => {"https://arweave.net/kng_bDJLMewvQ_1_M2YUrRnGJjoH-YWf-eRYeCXj7cE"}
                     }
                 }
-                None => {"DefaultSerendibite"}
+                None => {"https://arweave.net/e3ao7wBo7wSp5EHUNNg79MN8seQTZ5HNCSLQdxTPmlg"}
             }
         }
         Class::Benitoite => {
@@ -80,10 +80,10 @@ pub fn get_uri<'life>(class: Class, rarity: Option<Rarity>) -> &'life str{
                         Rarity::Uncommon => {"BenitoiteUncommon"}
                         Rarity::Rare => {"BenitoiteRare"}
                         Rarity::Exalted => {"BenitoiteExalted"}
-                        Rarity::Mythic => {"BenitoiteMythic"}
+                        Rarity::Mythic => {"https://arweave.net/kvqeN_tHeVprbecix2aO4mBrdHAT8k4szgQxDnu14UQ"}
                     }
                 }
-                None => {"DefaultBenitoite"}
+                None => {"https://arweave.net/Xo-Hk-ZHswayP5kJeiajj1WUCnBnTWH_1_FXxP2tQlw"}
             }
         }
     }
